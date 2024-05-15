@@ -1,7 +1,5 @@
 from taskmanager import db
 
-from taskmanager import db
-
 
 class Category(db.Model):
     # schema for the Category model
@@ -22,6 +20,7 @@ class Task(db.Model):
     is_urgent = db.Column(db.Boolean, default=False, nullable=False)
     due_date = db.Column(db.Date, nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey("category.id", ondelete="CASCADE"), nullable=False)
+
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
